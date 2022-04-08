@@ -14,3 +14,29 @@ const btn2 = document.querySelector('.btn2');
 btn2.addEventListener("click", () => {
     document.getElementById('result2').innerHTML = `Новый массив` + filteredElements;
 });
+
+//Задание 3
+let matrix = [
+    [1, 2],
+    [1, 2, 3],
+    [1, 2, 3, 4]
+];
+// //Первый вариант. Если нам достаточно найти индекс ПЕРВОГО массива в матрице, длина которого > 3.
+// let el = matrix.findIndex(el => el.length > 3);
+// const btn3 = document.querySelector('.btn3');
+// btn3.addEventListener("click", () => {
+//     document.getElementById('result3').innerHTML = el;
+// });
+
+// //Второй вариант. Если нам надо найти индексы всех массивов в матрице, длина которых > 3.
+
+let indexes = [];
+matrix.forEach((el, index) => {
+    if (el.length > 3) {
+        indexes.push(index);
+    }
+});
+const btn3 = document.querySelector('.btn3');
+btn3.addEventListener("click", () => {
+    document.getElementById('result3').innerHTML = indexes;
+});
